@@ -21,3 +21,6 @@ bash run.sh
 ```text
 http://ocr-service:8003/ocr
 ```
+
+curl.exe -G "http://127.0.0.1:8003/test/ocr" `
+  --data-urlencode "filePath=D:\test.jpg"
