@@ -43,3 +43,9 @@ docker run -d \
   -p 8003:8003 \
   -v /data/app/file_data:/data/app/file_data:ro \
   mehup/ocr-service:latest
+
+
+# ocr
+docker save -o ocr-service.tar mehup/ocr-service
+docker load -i ocr-service.tar
+docker run -d --name ocr-service --restart unless-stopped -p 8003:8003 -v /data/app/file_data:/data/app/file_data:ro mehup/ocr-service:latest
